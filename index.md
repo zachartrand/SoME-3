@@ -32,4 +32,16 @@ calculus is the method for deriving the formula used in calculators and computer
 formula itself is a pretty simple polynomial.
 
 ## The Geometric Series
+Most of us were introduced to polynomial equations in algebra.  For a quick refresher, a 
+polynomial is an expression involving at least one variable (usually $x$) and addition, 
+subtraction, multiplication, division, and integer powers.  Here are a few examples:
+
+[Line](https://www.desmos.com/calculator/o0i7zoysc2):  <br> $y = 5 + 2x$
+
+[Parabola](https://www.desmos.com/calculator/zdjd1sn77k):  <br> $y = 1 - x - x^{2}$
+
+[Quartic](https://www.desmos.com/calculator/3jjshmktba):  <br> $y = 4 - 2x - 5x^{2} + \frac{1}{2}x^{3} + x^{4}$
+
+Note:  The links lead to Desmos graphs where you can change the parameters to see how it changes the graph.
+
 
