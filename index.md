@@ -5,6 +5,7 @@ How does a computer/calculator compute natural logarithms?
 Author:  Zach Chartrand
 Created on 2 July 2023
 -->
+
 # How does a computer/calculator compute logarithms?
 
 ## The curious student's frustration
@@ -26,15 +27,15 @@ accurate?  How did the calculator crunch the input number and give us the output
 I remember this question being asked in high school, and the answer being no more than
 a handwave.  To be fair to Algebra II teachers (which is where I was first introduced 
 to logarithms, if memory serves), the answer is beyond the scope of algebra, and lies in 
-differential calculus.  But it is an answer worth knowing, and it's an answer that is very 
-knowable, even if you don't have a background in differential calculus.  Differential 
-calculus is the method for deriving the formula used in calculators and computers, but the 
-formula itself is a pretty simple polynomial.
+calculus.  But it is an answer worth knowing, and it's an answer that is very 
+knowable, even if you don't have a background in calculus.  Calculus is the method 
+for deriving the formula used in calculators and computers, but the formula itself 
+is a pretty simple polynomial.
 
 ## The Geometric Series
 Most of us were introduced to polynomial equations in algebra.  For a quick refresher, a 
 polynomial is an expression involving at least one variable (usually $x$) and addition, 
-subtraction, multiplication, division, and integer powers.  Here are a few examples:
+subtraction, multiplication, division, and integer power operators.  Here are a few examples:
 
 [Line](https://www.desmos.com/calculator/o0i7zoysc2):  <br> $y = 5 + 2x$
 
@@ -42,6 +43,6 @@ subtraction, multiplication, division, and integer powers.  Here are a few examp
 
 [Quartic](https://www.desmos.com/calculator/3jjshmktba):  <br> $y = 4 - 2x - 5x^{2} + \frac{1}{2}x^{3} + x^{4}$
 
-Note:  The links lead to Desmos graphs where you can change the parameters to see how it changes the graph.
+*Note:  The links lead to Desmos graphs where you can change the parameters to see how it changes the graph.*
 
 
