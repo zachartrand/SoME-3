@@ -45,4 +45,60 @@ subtraction, multiplication, division, and integer power operators.  Here are a 
 
 *Note:  The links lead to Desmos graphs where you can change the parameters to see how it changes the graph.*
 
+While these equations of polynomials contain a *finite* number of terms, we can have polynomials 
+with an *infinite* number of terms.  These are called **series**, and one of the simplest types of 
+series is called a **geometric series**.  A geometric series contains an initial term, usually 
+denoted by the variable $a$, and each successive term is multiplied by a ratio, usually denoted by 
+the variable $r$.  The basic formula is 
 
+$$\sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + ... + ar^n + ...$$
+
+If we set this series equal to $s$, we can do some rearranging to find a function that 
+this series is equivalent to:
+
+$$s = a + ar + ar^2 + ... + ar^n + ...$$
+
+By pulling an $r$ out of all the terms after the first one, we get
+
+$$s = a + r(a + ar + ar^2 + ... + ar^{n-1} + ...)$$
+
+Despite the fact that $ar^n$ becomes $ar^{n-1}$, if we were to expand out the terms in the 
+parentheses, we get the same series as $s$ in the first line, so we can substitute the 
+terms in the parentheses with $s$!
+
+$$s = a + rs$$
+
+Move $rs$ to the left side of the equation:
+
+$$s - rs = a,$$
+
+combine like-terms:
+
+$$s(1 - r) = a,$$
+
+and solve for $s$:
+
+$$s = \frac{a}{1 - r}.$$
+
+We can now set both $s$ expressions equal to each other:
+
+$$\frac{a}{1 - r} = \sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + ... + ar^n + ...$$
+
+There is one caveat to this equality:  it is only true if the sum *converges* to a 
+value, which happens when each term gets successively smaller; if the terms blow 
+up to infinity as they increase in degree, the series *diverges*.
+
+The geometric series we are interested in regarding the logarithm is the one where $a = 1$ 
+and $r = -x$:
+
+$$\frac{1}{1-(-x)} = 1 - x + x^2 - x^3 + ... + (-x)^n + ...$$
+
+$$\frac{1}{1+x} = 1 - x + x^2 - x^3 + ... + (-x)^n + ...$$
+
+This series converges when $|x| < 1$.  Now, you might think that some of the algebraic 
+manipulation we did earlier was invalid, but we can check our work.  Below I have a Desmos 
+graph with the function $\frac{1}{1+x}$ and the infinite series.  By moving the slider for $N$, 
+you can add successive terms to the series and see that, as more and more terms are added, 
+the series graph becomes a better and better approximation to the function graph for $|x| < 1$.
+
+<iframe src="https://www.desmos.com/calculator/7hczeiyf4b?embed" width="100%" style="border: 1px solid #ccc" frameborder=0></iframe>
