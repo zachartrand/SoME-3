@@ -62,9 +62,9 @@ By pulling an $r$ out of all the terms after the first one, we get
 
 $$s = a + r(a + ar + ar^2 + ... + ar^{n-1} + ...)$$
 
-Despite the fact that $ar^n$ becomes $ar^{n-1}$, if we were to expand out the terms in the 
-parentheses, we get the same series as $s$ in the first line, so we can substitute the 
-terms in the parentheses with $s$!
+Despite the fact that $ar^n$ becomes $ar^{n-1}$, we have an infinite number of terms, 
+so if we were to expand out the terms in the parentheses, we get the same series as $s$ 
+in the first line; therefore, we can substitute the terms in the parentheses with $s$!
 
 $$s = a + rs$$
 
@@ -91,14 +91,26 @@ up to infinity as they increase in degree, the series *diverges*.
 The geometric series we are interested in regarding the logarithm is the one where $a = 1$ 
 and $r = -x$:
 
-$$\frac{1}{1-(-x)} = 1 - x + x^2 - x^3 + ... + (-x)^n + ...$$
+$$\frac{1}{1-(-x)} = 1 + (-x) + (-x)^2 + (-x)^3 + ... + (-x)^n + ...$$
 
-$$\frac{1}{1+x} = 1 - x + x^2 - x^3 + ... + (-x)^n + ...$$
+$$\frac{1}{1+x} = 1 - x + x^2 - x^3 + x^4 + ... + (-x)^n + ...$$
 
 This series converges when $|x| < 1$.  Now, you might think that some of the algebraic 
-manipulation we did earlier was invalid, but we can check our work.  Below I have a Desmos 
-graph with the function $\frac{1}{1+x}$ and the infinite series.  By moving the slider for $N$, 
+manipulation we did earlier was invalid, but we can check our work.  Below, I have a Desmos 
+graph with both the function $\frac{1}{1+x}$ and the infinite series.  By moving the slider for $N$, 
 you can add successive terms to the series and see that, as more and more terms are added, 
 the series graph becomes a better and better approximation to the function graph for $|x| < 1$.
 
-<iframe src="https://www.desmos.com/calculator/7hczeiyf4b?embed" width="100%" style="border: 1px solid #ccc" frameborder=0></iframe>
+[Desmos: Geometric Series](https://www.desmos.com/calculator/7hczeiyf4b)
+
+## Getting a series for the natural logarithm
+
+"This is all very interesting, but what does this have to do with computing logarithms?"
+
+It turns out that the function $\frac{1}{1+x}$ and the natural logarithm are directly related. 
+Specifically, the area under the curve $\frac{1}{1+t}$ from 0 to any value $x$ is the 
+natural logarithm of $1+x$.  In mathematical symbols, this is rendered as
+
+$$\int_{0}^{x} \frac{1}{1+t} dt = \ln{(1+x)}$$
+
+
