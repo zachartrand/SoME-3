@@ -67,7 +67,7 @@ The general formula for a geometric series is
 
 $$\sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + ... + ar^n + ...$$
 
-If we set this series equal to $s$, we can do some rearranging to find a function that 
+If we set this formula equal to $s$, we can do some rearranging to find a function that 
 this series is equivalent to:
 
 $$s = a + ar + ar^2 + ... + ar^n + ...$$
@@ -181,18 +181,20 @@ So, we did it!  We have a polynomial series that calculates the natural logarith
 input by 1, as this series is $\ln{(1+x)}$, but that's a simple hurdle to jump!
 
 Except we're limited.  Very limited.  Remember, the geometric series only applies to the function $\frac{1}{1+x}$ for 
-$|x| < 1$, otherwise it diverges.  The same limitation exists here.  This is great if all the values you need to calculate 
-a logarithm for are between 0 and 2, but most problems involving logarithms tend to have very large values.
+$|x| < 1$, otherwise it diverges.  The same limitation exists here.  What's worse, the series only converges quickly 
+for $|x| < \frac{1}{2}$; outside this range, the number of terms becomes too much even for a computer to calculate in 
+a reasonable amount of time. This is fine if all the values you need to calculate a logarithm for are between 0.5 and 1.5, 
+but most problems involving logarithms tend to have very large values.
 
 Well, we tried.  Pack up, go home, see you next time.
 
 ## Properties of logarithms
 
-Actually, as it turns out, this would be the end if we were dealing with almost any other function.  
+Actually, as it turns out, this *would* be the end if we were dealing with almost any other function. 
 But we are dealing with logarithms, and logarithms are special.  There are two properties that we 
 can use to reduce our inputs so that we can calculate the logarithm of any value we want!
 
-The first property is that **multiplication in the input is equivalent to addition of the outputs**.
+The first property is that *multiplication in the input is equivalent to addition of the outputs*.
 
 This means that if the input is the product of two factors, the logarithm of that product is the same 
 as the logarithms of each factor taken individually and added together.  
