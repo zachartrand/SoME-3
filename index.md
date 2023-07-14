@@ -197,9 +197,21 @@ can use to reduce our inputs so that we can calculate the logarithm of any value
 The first property is that *multiplication in the input is equivalent to addition of the outputs*.
 
 This means that if the input is the product of two factors, the logarithm of that product is the same 
-as the logarithms of each factor taken individually and added together.  
+as the logarithms of each factor taken individually and added together.  For example, if we wanted to 
+find the natural logarithm of the value 6, we can compute either $\ln(6)$ or $\ln(2) + \ln(3)$, because 
+$6 = 2 \cdot 3$.
 
-In mathematical symbols, this 
-is rendered as
+The general form of this property is 
 
 $$ \log_b{(ac)} = \log_b{(a)} + \log_b{(c)} $$
+
+The second property is that *the logarithm of a value raised to some power is that power times the 
+logarithm of the (unraised) value*. This means that exponents in the input of the logarithm can hop 
+out and become a coefficient. For example, the number 8 can also be written as 
+$2^3$ $(2 \cdot 2 \cdot 2 = 8)$, so $\ln(8) = \ln(2^3) = 3\ln(2)$. 
+
+The general form of this property is
+
+$$ \log_b{(a^c)} = c \log_b{(a)} $$
+
+
