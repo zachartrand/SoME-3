@@ -38,9 +38,9 @@ Most of us were introduced to polynomial equations in algebra.  For a quick refr
 polynomial is an expression involving at least one variable (usually $x$) and addition,
 subtraction, multiplication, division, and integer power operators.  Here are a few examples:
 
-[Line](https://www.desmos.com/calculator/o0i7zoysc2):  <br> $y = 5 + 2x$
+[Line](https://www.desmos.com/calculator/ikej8uzn59):  <br> $y = 5 + 2x$
 
-[Parabola](https://www.desmos.com/calculator/zdjd1sn77k):  <br> $y = 1 - x - x^{2}$
+[Parabola](https://www.desmos.com/calculator/9ewvtz1lm6):  <br> $y = 1 - x - x^{2}$
 
 [Quartic](https://www.desmos.com/calculator/3jjshmktba):  <br> $y = 4 - 2x - 5x^{2} + \frac{1}{2}x^{3} + x^{4}$
 
@@ -58,7 +58,7 @@ $$ \sum_{n=0}^{\infty} 2 \cdot (-3)^n = 2 - 6 + 18 - 54 + ... $$
 
 In the first series, the initial value is $\frac{1}{2}$, and each term after it is the
 previous term multiplied by $\frac{1}{2}$.  The second series begins with the number 2,
-and each term after it is the previous term multiplied by 3.  Because the first series'
+and each term after it is the previous term multiplied by -3.  Because the first series'
 terms get smaller in absolute value for each successive term, the sum approaches, or
 **converges**, to a value.  The second series' terms get larger in absolute value
 with each successive term, so the series **diverges** without resolving to a defined value.
@@ -121,7 +121,7 @@ the series graph becomes a better and better approximation to the function graph
 "This is all very interesting, but what does this have to do with computing logarithms?"
 
 It turns out that the function $\frac{1}{1+x}$ and the natural logarithm are directly related.
-Specifically, the area under the curve $\frac{1}{1+t}$ from 0 to any value $x$ is the
+Specifically, the area under the curve $\frac{1}{1+t}$ from $t = 0$ to any value $x$ is the
 natural logarithm of $1+x$.  In mathematical symbols, this is rendered as
 
 $$\int_{0}^{x} \frac{1}{1+t} dt = \ln{(1+x)}$$
@@ -129,9 +129,9 @@ $$\int_{0}^{x} \frac{1}{1+t} dt = \ln{(1+x)}$$
 While the understanding of the calculus involved is beyond the scope of this article,
 I made a [Desmos graph](https://www.desmos.com/calculator/czktma6spu) where you can play
 with values of $x$ ($a$ in the graph) and see the area under the curve, with its exact
-value shown and a 1x1 square area as a comparison.
+value shown and a 1x1 square area shown as a comparison.
 
-Taking integrals is an inverse problem, and for most functions, is very difficult, if not impossible.
+Taking integrals is an inverse problem and for some functions is very difficult, if not impossible, to get the exact solution.
 However, for polynomials, it's actually very easy.  For a given polynomial term, increase the degree
 by one, divide the term by the new degree, and take the difference of the function evaluated at the two
 integrand values (the values at the top and bottom of the $\int$ ).
@@ -153,7 +153,7 @@ evaluate this term at $t = x$ and $t = 0$ and subtract them (this is what the ve
 The result is $x - 0$, which reduces to $x$.  So the first term of our infinite series for
 $\ln{(1+x)}$ is $x$!  Let's do the second term:
 
-$$ \int_{0}^{x} -t dt = \int_{0}^{x} -t^1 dt = -\frac{t^{1+1}}{1+1} \Big|_0^x = -\frac{t^2}{2} \Big|_0^x = -\frac{x^2}{2} - \biggl(-\frac{0^2}{2} \biggr) = -\frac{x^2}{2} - 0 = -\frac{x^2}{2}$$
+$$ \int_{0}^{x} -t dt = \int_{0}^{x} -t^1 dt = -\frac{t^{1+1}}{1+1} \Big|_0^x = -\frac{t^2}{2} \Big|_0^x = -\frac{x^2}{2} - \biggl(-\frac{0^2}{2} \biggr) = -\frac{x^2}{2} + 0 = -\frac{x^2}{2}$$
 
 Our second term is $-\frac{x^2}{2}$.  You may start to see the overall pattern, but we'll do one more:
 
@@ -209,7 +209,7 @@ The second property is that *the logarithm of a value raised to some power is th
 logarithm of the (unraised) value*.
 
 This means that exponents in the input of the logarithm can hop out and
-become a coefficient of the output. For example, the number 8 can also be written as
+become a coefficient in the output. For example, the number 8 can also be written as
 $2^3$ $(2 \cdot 2 \cdot 2 = 8)$, so $\ln(8) = \ln(2^3) = 3\ln(2)$.
 
 The general form of this property is
@@ -217,9 +217,9 @@ The general form of this property is
 $$ \log_b{(a^c)} = c \log_b{(a)} $$
 
 Each of these properties allow us to reduce the argument of the logarithm in different ways. Using the
-first property, if we have the natural logarithm of a known value (2 and 10 are popular choices), we can
+first property, if we have the natural logarithm of a known value (2 and 10 are common choices), we can
 reduce the argument by powers of that constant until we get a small enough input. Let's use 15 as an
-example. If we have the natural logarithm of 2 calculated, we can keep dividing 15 until it is close
+example. If we have the natural logarithm of 2 calculated, we can keep dividing 15 by 2 until it is close
 to 1 while keeping track of the number of times we divided by 2. After dividing by 2 four times,
 we reduce 15 to 0.9375, so $0.9375 \cdot 2^4 = 15$. We can plug this value into our series like this:
 
@@ -228,3 +228,35 @@ $$ \ln(15) = \ln(2^4 \cdot 0.9375) = 4 \ln(2) + \ln(0.9375) $$
 $$ = 4 \ln(2) + \ln(1 + (0.9375 - 1)) = 4 \ln(2) + \ln(1 + (-0.0625)) $$
 
 $$ = 4 \ln(2) + (-0.0625) - \frac{(-0.0625)^2}{2} + \frac{(-0.0625)^3}{3} + ... $$
+
+$$ = 2.772588722239781... - 0.0625 - 0.001953125 - 0.000081380208333... + ... $$
+
+We can see that as terms are added to the series, the approximation gets more and more precise as
+each term gets smaller and smaller in magnitude.  In this particular example, the next term is
+less than one tenth the absolute value of the previous term. This means that the approximation gains
+about one digit of accuracy for each term we add to the series. To see this, here is a list of the
+first eight approximations for $\ln(15)$, as well as the accepted value:
+
+0 terms: 2.772588722239781 <br>
+1 term:  2.710088722239781 <br>
+2 terms: 2.708135597239781 <br>
+3 terms: 2.708054217031448 <br>
+4 terms: 2.708050402334182 <br>
+5 terms: 2.708050211599319 <br>
+6 terms: 2.708050201665211 <br>
+7 terms: 2.708050201133027 <br>
+8 terms: 2.708050201103923
+
+Accepted value: 2.708050201102210
+
+So now we have a formula for finding the natural logarithm of any number to arbitrary precision
+based on the number of terms we use in the series. We did it! I even have a [Python script](scripts/log.py)
+that implements this formula to return the natural logarithm of any value within 64-bit floating-point
+precision using 48 terms.
+
+Now, this formula is perfectly good to use. After all, it's the formula used in
+[Python's decimal module](https://github.com/python/cpython/blob/main/Lib/_pydecimal.py#L5738)
+to find the natural logarithm for base-10 number representation. But what if there were a better
+formula? One that converged much faster to find the natural logarithm with fewer terms?
+
+## The better formula
