@@ -272,7 +272,7 @@ by one. For example, if you look at the series for
 they increase in degree by 2 for each term and converge very quickly (in fact, if you look at the C
 implementations of the
 [sine kernel](https://github.com/freemint/fdlibm/blob/master/k_sin.c) and
-[cosine kernel](https://en.wikipedia.org/wiki/Sine_and_cosine#Series_definitions), they only use six
+[cosine kernel](https://github.com/freemint/fdlibm/blob/master/k_cos.c), they only use six
 polynomial terms to get double floating-point precision, a much quicker convergence than our 48 terms!).
 So how do we get this series to skip a degree for each term? Surely, we can't just get rid of all the
 even-degree terms or all of the odd-degree terms and still get an accurate answer, right?
@@ -360,7 +360,7 @@ $$ \ln{(u)} = \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr
 
 We now have a series that increases by two degrees for each new term added! But how much quicker does
 this series converge compared to our old series? I have made a
-[Desmos graph](https://www.desmos.com/calculator/83hoq4hhsi) where you can compare the two series.
+[Desmos graph](https://www.desmos.com/calculator/zr1vhmoign) where you can compare the two series.
 The series for $\ln{(1+x)}$ is in red and our new series is in green. Slide the value for N to add terms
 to the series approximations, and note how they converge both by looking at the graph and by looking at
 the calculation for the natural log of 2. (Also, notice the difference in the radius of convergence.)
