@@ -36,7 +36,7 @@ This is wonderful!  Necessary, even, for if our calculators and computers calcul
 logarithms inaccurately, as well as exponentials, trig functions, and square roots,
 to name but a few, a lot of scientific and engineering work would be broken and
 end in catastrophe.  But how do we know that the value on the calculator is, in fact,
-accurate?  How did the calculator crunch the input number and give us the output?  
+accurate?  How did the calculator crunch the input number and give us the output?
 I remember this question being asked in high school, and the answer being no more than
 a handwave.  To be fair to Algebra II teachers (which is where I was first introduced
 to logarithms, if memory serves), the answer is beyond the scope of algebra, and lies in
@@ -232,7 +232,7 @@ The general form of this property is
 
 $$ \log_b{(a^c)} = c \log_b{(a)} $$
 
-Each of these properties allow us to reduce the argument of the logarithm in different ways. Using the
+Each of these properties allows us to reduce the argument of the logarithm in different ways. Using the
 first property, if we have the natural logarithm of a known value (2 and 10 are common choices), we can
 reduce the argument by powers of that constant until we get a small enough input. Let's use 15 as an
 example. If we have the natural logarithm of 2 calculated, we can keep dividing 15 by 2 until it is close
@@ -297,7 +297,7 @@ This is the series for $\ln{(1+x)}$, but what if we could get a series for a sli
 what would the series be for $\ln{(1-x)}$? We can rewrite $\ln{(1-x)}$ as $\ln{(1 + (-x)}$. To get its series, let's plug (-x)
 into our natural log series:
 
-$$ \ln{(1-x)} = \ln{(1 + (-x)} = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{3} - \frac{(-x)^4}{4} - \ldots $$
+$$ \ln{(1-x)} = \ln{(1 + (-x))} = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{3} - \frac{(-x)^4}{4} - \ldots $$
 
 $$ \ln{(1-x)} = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} + \ldots = \sum_{n=0}^{\infty} -\frac{x^{n+1}}{n+1} $$
 
@@ -375,7 +375,7 @@ $$ \ln{(u)} = \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr
 We now have a series that increases by two degrees for each new term added! But how much quicker does
 this series converge compared to our old series? I have made a
 [Desmos graph](https://www.desmos.com/calculator/zr1vhmoign) where you can compare the two series.
-The series for $\ln{(1+x)}$ is in red and our new series is in green. Slide the value for N to add terms
+The series for $\ln{(1+x)}$ is in red and our new series is in green. Slide the value for $N$ to add terms
 to the series approximations, and note how they converge both by looking at the graph and by looking at
 the calculation for the natural log of 2. (Also, notice the difference in the radius of convergence.)
 The old series takes 36 terms to reach Desmos' calculator
