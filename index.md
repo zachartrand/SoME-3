@@ -219,7 +219,7 @@ $$ \log_b{(ac)} = \log_b{(a)} + \log_b{(c)} $$
 
 This also applies to division in the inputs, but instead, you subtract the outputs:
 
-$$ \log_b{ \Bigl( \frac{a}{c} \Bigr) } = \log_b{(a)} - \log_b{(c)} $$
+$$ \log_b{ \biggl( \frac{a}{c} \biggr) } = \log_b{(a)} - \log_b{(c)} $$
 
 The second property is that *the logarithm of a value raised to some power is that power times the
 logarithm of the (unraised) value*.
