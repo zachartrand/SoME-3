@@ -129,10 +129,11 @@ the series graph becomes a better and better approximation to the function graph
 [Desmos: Geometric Series](https://www.desmos.com/calculator/t6u3zwhabp)
 
 <img src="./images/desmos-geometric-series.png" width="50%"
-  title="Pictured: The 5-term approximation of the geometric series from above (black line) compared to the function $\frac{1}{1+x}$ (green line).">
+  title="Pictured: The 5-term approximation of the geometric series from above (black line) compared to the function 1/(1+x) (green line).">
 
 *Pictured: The 5-term approximation of the geometric series from above (black line)*
-*compared to the function $\frac{1}{1+x}$ (green line).*
+*compared to the function $\frac{1}{1+x}$ (green line). Note how the series approximation*
+*is only accurate for $|x| < 1$.*
 
 ## Getting a series for the natural logarithm
 
@@ -150,9 +151,9 @@ with values of $x$ ($a$ in the graph) and see the area under the curve, with its
 value shown and a 1x1 square area shown as a comparison.
 
 <img src="./images/desmos-integral.png" width="50%"
-  title="Pictured: The integral of $\frac{1}{1+x}$ from 0 to $e - 1$ (shaded in blue) and a square of Area = 1 (shaded in blue). Both shaded areas are equal in size.">
+  title="Pictured: The integral of 1/(1+x) from 0 to e-1 (shaded in blue) and a square of Area = 1 (shaded in blue). Both shaded areas are equal in size.">
 
-*Pictured: The integral of $\frac{1}{1+x}$ from 0 to $e - 1$ (shaded in blue) and a square of Area = 1 (shaded in blue).*
+*Pictured: The integral of $\frac{1}{1+x}$ from 0 to $e - 1$ (shaded in blue) and a square of Area = 1 (shaded in green).*
 *Both shaded areas are equal in size.*
 
 Taking integrals is an inverse problem and for some functions is very difficult, if not impossible, to get the exact solution.
@@ -404,9 +405,9 @@ necessary than it is today; it only uses 8 terms of the series after optimizing 
 reduction algorithm to get an answer accurate to double floating-point precision.
 
 <img src="./images/desmos-series-comparison.png" width="50%"
-  title="Pictured: A comparison of the 3-term approximations for the series $\ln{(1+x)}$ and $\ln{\biggl( \frac{x-1}{x+1} \biggr)}$. Even after only three terms, the latter series is a much better approximation than the former.">
+  title="Pictured: A comparison of the 3-term approximations for the series ln(1+x) and ln[(x-1)/(x+1)]. Even after only three terms, the latter series is a much better approximation than the former.">
 
-*Pictured: A comparison of the 3-term approximations for the series $\ln{(1+x)}$ and $\ln{\biggl( \frac{x-1}{x+1} \biggr)}$.*
+*Pictured: A comparison of the 3-term approximations for the series $\ln{(1+x)}$ and $\ln{\Bigl( \frac{x-1}{x+1} \Bigr)}$.*
 *Even after only three terms, the latter series is a much better approximation than the former.*
 
 But regardless of whichever series is used under the hood, you now understand how your computer
