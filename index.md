@@ -114,7 +114,7 @@ graph with both the function $\frac{1}{1+x}$ and the infinite series.  By moving
 you can add successive terms to the series and see that, as more and more terms are added,
 the series graph becomes a better and better approximation to the function graph for $|x| < 1$.
 
-[Desmos: Geometric Series](https://www.desmos.com/calculator/7hczeiyf4b)
+[Desmos: Geometric Series](https://www.desmos.com/calculator/t6u3zwhabp)
 
 ## Getting a series for the natural logarithm
 
@@ -163,7 +163,7 @@ With this, the pattern starts to come into focus.  We have a series where each t
 divided by its degree, where all of the odd degree polynomial terms are positive and all the even
 terms are negative.  Written as a series,
 
-$$ \ln{(1+x)} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} $$
+$$ \ln{(1+x)} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + ... $$
 
 In fact, if we were to integrate the general term of the geometric series, this is exactly what we get:
 
@@ -204,6 +204,10 @@ $6 = 2 \cdot 3$.
 The general form of this property is
 
 $$ \log_b{(ac)} = \log_b{(a)} + \log_b{(c)} $$
+
+This also applies to division in the inputs, but instead, you subtract the outputs:
+
+$$ \log_b{ \biggl( \frac{a}{c} \biggr) } = \log_b{(a)} - \log_b{(c)} $$
 
 The second property is that *the logarithm of a value raised to some power is that power times the
 logarithm of the (unraised) value*.
@@ -260,3 +264,93 @@ to find the natural logarithm for base-10 number representation. But what if the
 formula? One that converged much faster to find the natural logarithm with fewer terms?
 
 ## The better formula
+
+How can an infinite series converge faster? Well, it turns out that for inputs less than 1, series
+that have terms that increase by two degrees will converge much faster than series that only increase
+by one. For example, if you look at the series for
+[sine and cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#Series_definitions),
+they increase in degree by 2 for each term and converge very quickly (in fact, if you look at the C
+implementations of the
+[sine kernel](https://github.com/freemint/fdlibm/blob/master/k_sin.c) and
+[cosine kernel](https://en.wikipedia.org/wiki/Sine_and_cosine#Series_definitions), they only use six
+polynomial terms to get double floating-point precision, a much quicker convergence than our 48 terms!).
+So how do we get this series to skip a degree for each term? Surely, we can't just get rid of all the
+even-degree terms or all of the odd-degree terms and still get an accurate answer, right?
+
+We can if we do it in a clever way. Let's look at the series again:
+
+$$ \ln{(1+x)} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + ... $$
+
+This is the series for $\ln{(1+x)}$, but what if we could get a series for a slightly different input? For instance,
+what would the series be for $\ln{(1-x)}$? We can rewrite $\ln{(1-x)}$ as $\ln{(1 + (-x)}$. To get its series, let's plug (-x)
+into our natural log series:
+
+$$ \ln{(1-x)} = \ln{(1 + (-x)} = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{3} - \frac{(-x)^4}{4} - ... $$
+
+$$ \ln{(1-x)} = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} + ... = \sum_{n=0}^{\infty} -\frac{x^{n+1}}{n+1} $$
+
+The difference between this series and our original series is that all the odd terms have become negative
+while the even terms remain negative. This is perfect! If you don't understand why, let me put each series in
+expanded form with all the terms lined up:
+
+$$ \ln{(1+x)} = +x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + ... $$
+
+$$ \ln{(1-x)} = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - ... $$
+
+It should be apparent from this form that if we add the two series together, the odd terms will cancel out,
+and if we subtract the second series from the first series, the even terms will cancel out. So, should we add
+the series together, or subtract them? This must be determined by seeing how the logarithm function input changes
+when we add or subtract the two functions together. If we add the two functions together, we get
+
+$$ \ln{(1+x)} + \ln{(1-x)} = \ln{((1+x)(1-x))} = \ln{(1-x^2)} $$
+
+And if we subtract the two functions, we get
+
+$$ \ln{(1+x)} - \ln{(1-x)} = \ln{ \biggl( \frac{1+x}{1-x} \biggr)} $$
+
+Let's remind ourselves that $x$ is the value we plug into the series. If we want the natural logarithm of some
+value, let's call it $u$, then we have to find the value of $x$ to plug into our series that will get us the
+natural log of $u$. We can find this by setting $u$ equal to the input of each new, combined logarithm and solve
+for $x$. For the added logarithm, set $u$ equal to $1 - x^2$:
+
+$$ u = 1 - x^2 $$
+
+$$ x^2 = 1 - u $$
+
+$$ x = \sqrt{1-u} $$
+
+For the subtracted logarithm, set $u$ equal to $\frac{1+x}{1-x}$:
+
+$$ u = \frac{1+x}{1-x} $$
+
+$$ u(1-x) = 1 + x $$
+
+$$ u - ux = 1 + x $$
+
+$$ ux + x = u - 1 $$
+
+$$ x(u + 1) = u - 1 $$
+
+$$ x = \frac{u-1}{u+1} $$
+
+The addition of the logarithms requires taking a square root to convert our main input into the series input, while the
+subtraction of the logarithms only requires addition, subtraction, and division. Subtracting the logarithms is
+the clear winner. Now we can take our two series and combine them in this manner:
+
+    $$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + ... $$
+
+$$ -\ln{(1-x)} = -(-x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - ...) $$
+
+Distributing the negative sign on the second series, we get
+
+ $$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + ... $$
+
+$$ -\ln{(1-x)} = x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5} + \frac{x^6}{6} + ...) $$
+
+$$ \ln{ \biggl( \frac{1+x}{1-x} \biggr)} = 2x + \frac{2}{3}x^3 + \frac{2}{5}x^5 + \frac{2}{7}x^7 + ... $$
+
+$$ \ln{ \biggl( \frac{1+x}{1-x} \biggr)} = \sum_{n=0}^{\infty} \frac{2}{2n+1}x^{2n+1} $$
+
+Substituting our initial value, $u$, in, we get
+
+$$ \ln{(u)} = \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr)}^{2n+1} = 2{\biggl( \frac{u-1}{u+1} \biggr)} + \frac{2}{3} {\biggl( \frac{u-1}{u+1} \biggr)}^3 + \frac{2}{5} {\biggl( \frac{u-1}{u+1} \biggr)}^5 + \frac{2}{7} {\biggl( \frac{u-1}{u+1} \biggr)}^7 + ... $$
