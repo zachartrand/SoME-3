@@ -113,7 +113,7 @@ $$\frac{a}{1 - r} = \sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + \ldots + ar^n + \
 Note that this assumes the series converges.  This formula does not hold if the
 series diverges.
 
-The geometric series we are interested in regarding the logarithm is the one where $a = 1$
+Regarding the natural logarithm, the geometric series we are interested in is the one where $a = 1$
 and $r = -x$:
 
 $$\frac{1}{1-(-x)} = 1 + (-x) + (-x)^2 + (-x)^3 + \ldots + (-x)^n + \ldots$$
@@ -127,6 +127,12 @@ you can add successive terms to the series and see that, as more and more terms 
 the series graph becomes a better and better approximation to the function graph for $|x| < 1$.
 
 [Desmos: Geometric Series](https://www.desmos.com/calculator/t6u3zwhabp)
+
+<img src="./images/desmos-geometric-series.png" width="50%"
+  title="Pictured: The 5-term approximation of the geometric series from above (black line) compared to the function $\frac{1}{1+x}$ (green line).">
+
+*Pictured: The 5-term approximation of the geometric series from above (black line)*
+*compared to the function $\frac{1}{1+x}$ (green line).*
 
 ## Getting a series for the natural logarithm
 
@@ -142,6 +148,12 @@ While the understanding of the calculus involved is beyond the scope of this art
 I made a [Desmos graph](https://www.desmos.com/calculator/czktma6spu) where you can play
 with values of $x$ ($a$ in the graph) and see the area under the curve, with its exact
 value shown and a 1x1 square area shown as a comparison.
+
+<img src="./images/desmos-integral.png" width="50%"
+  title="Pictured: The integral of $\frac{1}{1+x}$ from 0 to $e - 1$ (shaded in blue) and a square of Area = 1 (shaded in blue). Both shaded areas are equal in size.">
+
+*Pictured: The integral of $\frac{1}{1+x}$ from 0 to $e - 1$ (shaded in blue) and a square of Area = 1 (shaded in blue).*
+*Both shaded areas are equal in size.*
 
 Taking integrals is an inverse problem and for some functions is very difficult, if not impossible, to get the exact solution.
 However, for polynomials, it's actually very easy.  For a given polynomial term, increase the degree
@@ -321,7 +333,7 @@ And if we subtract the two functions, we get
 $$ \ln{(1+x)} - \ln{(1-x)} = \ln{ \biggl( \frac{1+x}{1-x} \biggr)} $$
 
 using the first property of logarithms. Let's remind ourselves that $x$ is the value we plug into the
-series. If we want the natural logarithm of some value, let's call it $u$, then we have to find the
+series. If we want the natural logarithm of some value—let's call it $u$—then we have to find the
 value of $x$ to plug into our series that will get us the natural log of $u$. We can find this by
 setting $u$ equal to the input of each new, combined logarithm and solve for $x$. For the added
 logarithm, set $u$ equal to $1 - x^2$:
@@ -348,9 +360,10 @@ $$ x(u + 1) = u - 1 $$
 
 $$ x = \frac{u-1}{u+1} $$
 
-The addition of the logarithms requires taking a square root to convert our main input into the series input, while the
-subtraction of the logarithms only requires addition, subtraction, and division. Subtracting the logarithms is
-the clear winner. Now we can take our two series and combine them in this manner:
+The addition of the logarithms requires taking a square root—a complicated function in and of itself—to convert
+our main input into the series input, while the subtraction of the logarithms only requires the basic operations of
+addition, subtraction, and division. Subtracting the logarithms is the clear winner. Now we can take our two series
+and combine them in this manner:
 
 $$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + \ldots $$
 
@@ -389,6 +402,12 @@ other series! This series is what is used in the
 which was made during a time where memory was much more limited, so optimization was much more
 necessary than it is today; it only uses 8 terms of the series after optimizing the argument
 reduction algorithm to get an answer accurate to double floating-point precision.
+
+<img src="./images/desmos-series-comparison.png" width="50%"
+  title="Pictured: A comparison of the 3-term approximations for the series $\ln{(1+x)}$ and $\ln{\biggl( \frac{x-1}{x+1} \biggr)}$. Even after only three terms, the latter series is a much better approximation than the former.">
+
+*Pictured: A comparison of the 3-term approximations for the series $\ln{(1+x)}$ and $\ln{\biggl( \frac{x-1}{x+1} \biggr)}$.*
+*Even after only three terms, the latter series is a much better approximation than the former.*
 
 But regardless of whichever series is used under the hood, you now understand how your computer
 and your calculator compute and give you an accurate value to the natural logarithm function. And
