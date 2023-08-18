@@ -15,7 +15,7 @@ the function, put in the value that you need to calculate, hit "=" or "ENTER",
 and SHABAM!  You have the correct answer to some arbitrary number of digits that
 you are ensured are all 100% accurate.
 
-<img src="./images/Calculator_ln_2.png" width=30%
+<img src="./images/Calculator_ln_2.png" width="30%"
   title="Pictured:  The natural log of 2 to 32 digits on the built-in Microsoft calculator">
 
 *Pictured:  The natural log of 2 to (an arbitrary) 32 digits on the built-in Microsoft calculator.*
