@@ -407,8 +407,9 @@ reduction algorithm to get an answer accurate to double floating-point precision
 <img src="./images/desmos-series-comparison.png" width="50%"
   title="Pictured: A comparison of the 3-term approximations for the series ln(1+x) and ln[(x-1)/(x+1)]. Even after only three terms, the latter series is a much better approximation than the former.">
 
-*Pictured: A comparison of the 3-term approximations for the series $\ln{(1+x)}$ and $\ln{\Bigl( \frac{x-1}{x+1} \Bigr)}$.*
-*Even after only three terms, the latter series is a much better approximation than the former.*
+*Pictured: A comparison of the 3-term approximations for the series $\ln{(1+x)}$ and*
+*$\ln{\Bigl( \frac{x-1}{x+1} \Bigr)}$. Even after only three terms, the latter series*
+*is a much better approximation than the former.*
 
 But regardless of whichever series is used under the hood, you now understand how your computer
 and your calculator compute and give you an accurate value to the natural logarithm function. And
