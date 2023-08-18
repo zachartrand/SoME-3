@@ -390,7 +390,7 @@ which was made during a time where memory was much more limited, so optimization
 necessary than it is today; it only uses 8 terms of the series after optimizing the argument
 reduction algorithm to get an answer accurate to double floating-point precision.
 
-But it doesn't matter which series you use. With either one, you now understand how your computer
+But regardless of whichever series is used under the hood, you now understand how your computer
 and your calculator compute and give you an accurate value to the natural logarithm function. And
 with the [change of base formula](https://en.wikipedia.org/wiki/Logarithm#Change_of_base), you can
 calculate the logarithm of any base.
