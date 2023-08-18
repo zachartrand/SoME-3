@@ -360,13 +360,13 @@ Distributing the negative sign on the second series, we get
 
 $$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + \ldots $$
 
-$$ -\ln{(1-x)} = x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5} + \frac{x^6}{6} + \ldots) $$
+$$ -\ln{(1-x)} = x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5} + \frac{x^6}{6} + \ldots $$
 
 $$ \ln{ \biggl( \frac{1+x}{1-x} \biggr)} = 2x + \frac{2}{3}x^3 + \frac{2}{5}x^5 + \frac{2}{7}x^7 + \ldots $$
 
 $$ \ln{ \biggl( \frac{1+x}{1-x} \biggr)} = \sum_{n=0}^{\infty} \frac{2}{2n+1}x^{2n+1} $$
 
-Substituting our initial value, $u$, in, we get
+Substituting our initial value, $u$, into the input, we get
 
 $$ \ln{(u)} = \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr)}^{2n+1} = 2{\biggl( \frac{u-1}{u+1} \biggr)} + \frac{2}{3} {\biggl( \frac{u-1}{u+1} \biggr)}^3 + \frac{2}{5} {\biggl( \frac{u-1}{u+1} \biggr)}^5 + \frac{2}{7} {\biggl( \frac{u-1}{u+1} \biggr)}^7 + \ldots $$
 
