@@ -337,7 +337,11 @@ The addition of the logarithms requires taking a square root to convert our main
 subtraction of the logarithms only requires addition, subtraction, and division. Subtracting the logarithms is
 the clear winner. Now we can take our two series and combine them in this manner:
 
+<<<<<<< HEAD
 $$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + ... $$
+=======
+    $$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + ... $$
+>>>>>>> f8308034c46114f9551f4533354e920e71a5229e
 
 $$ -\ln{(1-x)} = -(-x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - ...) $$
 
