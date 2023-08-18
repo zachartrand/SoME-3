@@ -52,9 +52,9 @@ series is called a **geometric series**.  A geometric series contains an initial
 denoted by the variable $a$, and each successive term is multiplied by a ratio, usually denoted by
 the variable $r$.  Here are a couple of examples:
 
-$$ \sum_{n=1}^{\infty} \frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + ... $$
+$$ \sum_{n=1}^{\infty} \frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots $$
 
-$$ \sum_{n=0}^{\infty} 2 \cdot (-3)^n = 2 - 6 + 18 - 54 + ... $$
+$$ \sum_{n=0}^{\infty} 2 \cdot (-3)^n = 2 - 6 + 18 - 54 + \ldots $$
 
 In the first series, the initial value is $\frac{1}{2}$, and each term after it is the
 previous term multiplied by $\frac{1}{2}$.  The second series begins with the number 2,
@@ -65,16 +65,16 @@ with each successive term, so the series **diverges** without resolving to a def
 
 The general formula for a geometric series is
 
-$$\sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + ... + ar^n + ...$$
+$$\sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + \ldots + ar^n + \ldots$$
 
 If we set this formula equal to $s$, we can do some rearranging to find a function that
 this series is equivalent to:
 
-$$s = a + ar + ar^2 + ... + ar^n + ...$$
+$$s = a + ar + ar^2 + \ldots + ar^n + \ldots$$
 
 By pulling an $r$ out of all the terms after the first one, we get
 
-$$s = a + r(a + ar + ar^2 + ... + ar^{n-1} + ...)$$
+$$s = a + r(a + ar + ar^2 + \ldots + ar^{n-1} + \ldots)$$
 
 Despite the fact that $ar^n$ becomes $ar^{n-1}$, we have an infinite number of terms,
 so if we were to expand out the terms in the parentheses, we get the same series as $s$
@@ -96,7 +96,7 @@ $$s = \frac{a}{1 - r}.$$
 
 We can now set both $s$ expressions equal to each other:
 
-$$\frac{a}{1 - r} = \sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + ... + ar^n + ...$$
+$$\frac{a}{1 - r} = \sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + \ldots + ar^n + \ldots$$
 
 Note that this assumes the series converges.  This formula does not hold if the
 series diverges.
@@ -104,9 +104,9 @@ series diverges.
 The geometric series we are interested in regarding the logarithm is the one where $a = 1$
 and $r = -x$:
 
-$$\frac{1}{1-(-x)} = 1 + (-x) + (-x)^2 + (-x)^3 + ... + (-x)^n + ...$$
+$$\frac{1}{1-(-x)} = 1 + (-x) + (-x)^2 + (-x)^3 + \ldots + (-x)^n + \ldots$$
 
-$$\frac{1}{1+x} = 1 - x + x^2 - x^3 + x^4 + ... + (-x)^n + ...$$
+$$\frac{1}{1+x} = 1 - x + x^2 - x^3 + x^4 + \ldots + (-x)^n + \ldots$$
 
 This series converges when $|x| < 1$.  Now, you might think that some of the algebraic
 manipulation we did earlier was invalid, but we can check our work.  Below, I have a Desmos
@@ -138,7 +138,7 @@ integrand values (the values at the top and bottom of the $\int$ ).
 
 We'll start by setting the natural logarithm equal to the integral of our geometric series:
 
-$$\ln{(1+x)} = \int_{0}^{x} \frac{1}{1+t} dt = \int_{0}^{x} (1 - t + t^2 - t^3 + t^4 + ... + (-t)^n + ...) dt$$
+$$\ln{(1+x)} = \int_{0}^{x} \frac{1}{1+t} dt = \int_{0}^{x} (1 - t + t^2 - t^3 + t^4 + \ldots + (-t)^n + \ldots) dt$$
 
 The integral of a sum is the sum of the integrals of each term, so we can take this one term at a time.
 Starting with the first term,
@@ -163,7 +163,7 @@ With this, the pattern starts to come into focus.  We have a series where each t
 divided by its degree, where all of the odd degree polynomial terms are positive and all the even
 terms are negative.  Written as a series,
 
-$$ \ln{(1+x)} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + ... $$
+$$ \ln{(1+x)} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots $$
 
 In fact, if we were to integrate the general term of the geometric series, this is exactly what we get:
 
@@ -207,7 +207,7 @@ $$ \log_b{(ac)} = \log_b{(a)} + \log_b{(c)} $$
 
 This also applies to division in the inputs, but instead, you subtract the outputs:
 
-$$ \log_b{ \biggl( \frac{a}{c} \biggr) } = \log_b{(a)} - \log_b{(c)} $$
+$$ \log_b{ \Bigl( \frac{a}{c} \Bigr) } = \log_b{(a)} - \log_b{(c)} $$
 
 The second property is that *the logarithm of a value raised to some power is that power times the
 logarithm of the (unraised) value*.
@@ -231,9 +231,9 @@ $$ \ln(15) = \ln(2^4 \cdot 0.9375) = 4 \ln(2) + \ln(0.9375) $$
 
 $$ = 4 \ln(2) + \ln(1 + (0.9375 - 1)) = 4 \ln(2) + \ln(1 + (-0.0625)) $$
 
-$$ = 4 \ln(2) + (-0.0625) - \frac{(-0.0625)^2}{2} + \frac{(-0.0625)^3}{3} + ... $$
+$$ = 4 \ln(2) + (-0.0625) - \frac{(-0.0625)^2}{2} + \frac{(-0.0625)^3}{3} + \ldots $$
 
-$$ = 2.772588722239781... - 0.0625 - 0.001953125 - 0.000081380208333... + ... $$
+$$ = 2.772588722239781... - 0.0625 - 0.001953125 - 0.000081380208333... + \ldots $$
 
 We can see that as terms are added to the series, the approximation gets more and more precise as
 each term gets smaller and smaller in magnitude.  In this particular example, the next term is
@@ -279,23 +279,23 @@ even-degree terms or all of the odd-degree terms and still get an accurate answe
 
 We can if we do it in a clever way. Let's look at the series again:
 
-$$ \ln{(1+x)} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + ... $$
+$$ \ln{(1+x)} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots $$
 
 This is the series for $\ln{(1+x)}$, but what if we could get a series for a slightly different input? For instance,
 what would the series be for $\ln{(1-x)}$? We can rewrite $\ln{(1-x)}$ as $\ln{(1 + (-x)}$. To get its series, let's plug (-x)
 into our natural log series:
 
-$$ \ln{(1-x)} = \ln{(1 + (-x)} = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{3} - \frac{(-x)^4}{4} - ... $$
+$$ \ln{(1-x)} = \ln{(1 + (-x)} = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{3} - \frac{(-x)^4}{4} - \ldots $$
 
-$$ \ln{(1-x)} = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} + ... = \sum_{n=0}^{\infty} -\frac{x^{n+1}}{n+1} $$
+$$ \ln{(1-x)} = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} + \ldots = \sum_{n=0}^{\infty} -\frac{x^{n+1}}{n+1} $$
 
 The difference between this series and our original series is that all the odd terms have become negative
 while the even terms remain negative. This is perfect! If you don't understand why, let me put each series in
 expanded form with all the terms lined up:
 
-$$ \ln{(1+x)} = +x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + ... $$
+$$ \ln{(1+x)} = +x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + \ldots $$
 
-$$ \ln{(1-x)} = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - ... $$
+$$ \ln{(1-x)} = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - \ldots $$
 
 It should be apparent from this form that if we add the two series together, the odd terms will cancel out,
 and if we subtract the second series from the first series, the even terms will cancel out. So, should we add
@@ -308,10 +308,11 @@ And if we subtract the two functions, we get
 
 $$ \ln{(1+x)} - \ln{(1-x)} = \ln{ \biggl( \frac{1+x}{1-x} \biggr)} $$
 
-Let's remind ourselves that $x$ is the value we plug into the series. If we want the natural logarithm of some
-value, let's call it $u$, then we have to find the value of $x$ to plug into our series that will get us the
-natural log of $u$. We can find this by setting $u$ equal to the input of each new, combined logarithm and solve
-for $x$. For the added logarithm, set $u$ equal to $1 - x^2$:
+using the first property of logarithms. Let's remind ourselves that $x$ is the value we plug into the
+series. If we want the natural logarithm of some value, let's call it $u$, then we have to find the
+value of $x$ to plug into our series that will get us the natural log of $u$. We can find this by
+setting $u$ equal to the input of each new, combined logarithm and solve for $x$. For the added
+logarithm, set $u$ equal to $1 - x^2$:
 
 $$ u = 1 - x^2 $$
 
@@ -337,20 +338,72 @@ The addition of the logarithms requires taking a square root to convert our main
 subtraction of the logarithms only requires addition, subtraction, and division. Subtracting the logarithms is
 the clear winner. Now we can take our two series and combine them in this manner:
 
-$$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + ... $$
+$$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + \ldots $$
 
-$$ -\ln{(1-x)} = -(-x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - ...) $$
+$$ -\ln{(1-x)} = -(-x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \frac{x^5}{5} - \frac{x^6}{6} - \ldots) $$
 
 Distributing the negative sign on the second series, we get
 
-$$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + ... $$
+$$ \ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \frac{x^6}{6} + \ldots $$
 
-$$ -\ln{(1-x)} = x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5} + \frac{x^6}{6} + ...) $$
+$$ -\ln{(1-x)} = x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5} + \frac{x^6}{6} + \ldots) $$
 
-$$ \ln{ \biggl( \frac{1+x}{1-x} \biggr)} = 2x + \frac{2}{3}x^3 + \frac{2}{5}x^5 + \frac{2}{7}x^7 + ... $$
+$$ \ln{ \biggl( \frac{1+x}{1-x} \biggr)} = 2x + \frac{2}{3}x^3 + \frac{2}{5}x^5 + \frac{2}{7}x^7 + \ldots $$
 
 $$ \ln{ \biggl( \frac{1+x}{1-x} \biggr)} = \sum_{n=0}^{\infty} \frac{2}{2n+1}x^{2n+1} $$
 
 Substituting our initial value, $u$, in, we get
 
-$$ \ln{(u)} = \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr)}^{2n+1} = 2{\biggl( \frac{u-1}{u+1} \biggr)} + \frac{2}{3} {\biggl( \frac{u-1}{u+1} \biggr)}^3 + \frac{2}{5} {\biggl( \frac{u-1}{u+1} \biggr)}^5 + \frac{2}{7} {\biggl( \frac{u-1}{u+1} \biggr)}^7 + ... $$
+$$ \ln{(u)} = \sum_{n=0}^{\infty} \frac{2}{2n+1} {\biggl( \frac{u-1}{u+1} \biggr)}^{2n+1} = 2{\biggl( \frac{u-1}{u+1} \biggr)} + \frac{2}{3} {\biggl( \frac{u-1}{u+1} \biggr)}^3 + \frac{2}{5} {\biggl( \frac{u-1}{u+1} \biggr)}^5 + \frac{2}{7} {\biggl( \frac{u-1}{u+1} \biggr)}^7 + \ldots $$
+
+We now have a series that increases by two degrees for each new term added! But how much quicker does
+this series converge compared to our old series? I have made a
+[Desmos graph](https://www.desmos.com/calculator/83hoq4hhsi) where you can compare the two series.
+The series for $\ln{(1+x)}$ is in red and our new series is in green. Slide the value for N to add terms
+to the series approximations, and note how they converge both by looking at the graph and by looking at
+the calculation for the natural log of 2. (Also, notice the difference in the radius of convergence.)
+The old series takes 36 terms to reach Desmos' calculator
+accuracy (11 decimal places), but the new series only takes 12! We reduced the number of terms we need
+by one third! And when you have the option to reduce the argument like we did with the example to find
+the natural log of 15, the number of terms reduces further. In my
+[Python script for the new series](scripts/log_fast.py), the code calculates the natural logarithm
+for any number with 15 terms, less than one third of the 48 terms needed for my script for the
+other series! This series is what is used in the
+[logarithm function used in the C library](https://github.com/freemint/fdlibm/blob/master/e_log.c),
+which was made during a time where memory was much more limited, so optimization was much more
+necessary than it is today; it only uses 8 terms of the series after optimizing the argument
+reduction algorithm to get an answer accurate to double floating-point precision.
+
+But it doesn't matter which series you use. With either one, you now understand how your computer
+and your calculator compute and give you an accurate value to the natural logarithm function. And
+with the [change of base formula](https://en.wikipedia.org/wiki/Logarithm#Change_of_base), you can
+calculate the logarithm of any base.
+
+## Final thoughts
+
+As I was learning how to script in Python, I began to get curious about how things worked under the
+hood of this programming language. Since Python is open source, I was able to look at its source code
+to see how different mathematical functions, particularly in its
+[math](https://docs.python.org/3/library/math.html) and
+[cmath](https://docs.python.org/3/library/cmath.html) modules, worked and how their code was structured.
+I learned about different techniques of coding mathematical formulae that avoided weird edge cases that
+would either create an inaccurate result or throw an error despite a calculatable value existing.
+However, when it came to the basic complicated math functions, like the logarithm, trigonometric, and
+exponential functions, I found that the Python source code didn't have them written up, because Python
+used the functions from the C library. This led me to a new adventure where I looked into [the original
+C code](https://github.com/freemint/fdlibm), which, while more difficult to read, is surprisingly
+readable once you have learned Python.
+The trig functions worked more or less how I expected, but I was surprised that the natural logarithm
+used a different series than the one I learned about in my calculus class. (So does the exponential
+function, incidentally. After all, the Taylor series for exp(x) only increases by one degree each term,
+and as we've learned here, if you can bump that up to two degrees per term, you have better optimization.
+If you are curious, go and seek that one out yourself.) Once I worked out how this series was derived,
+I gained an appreciation for the cleverness of mathematicians and programmers who sussed out this series
+to calculate values for this very useful function. I have always been interested in how things like this
+work; when I was younger, I was the curious student who got frustrated when something logical and
+grounded in structured patterns were given to us like a magic wand where one push of a button gave you
+the answer you sought. I saw logarithm tables that had painstaking calculations for every common logarithm
+between 1.0 and 10 in 0.001 increments. Where did these values come from, and how do we know they work
+for our calculations of radioactive decay, chemical reactions, and population growth? Thanks to this
+exercise, now I know, and if you made it this far, so do you! Thank you for joining me in this fun little
+math adventure. I hope you found this exercise as interesting and enlightening as I have.
