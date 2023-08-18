@@ -42,7 +42,7 @@ subtraction, multiplication, division, and integer power operators.  Here are a 
 
 [Parabola](https://www.desmos.com/calculator/9ewvtz1lm6):  <br> $y = 1 - x - x^{2}$
 
-[Quartic](https://www.desmos.com/calculator/3jjshmktba):  <br> $y = 4 - 2x - 5x^{2} + \frac{1}{2}x^{3} + x^{4}$
+[Quartic](https://www.desmos.com/calculator/6dukowuqg0):  <br> $y = 4 - 2x - 5x^{2} + \frac{1}{2}x^{3} + x^{4}$
 
 *Note:  The links lead to Desmos graphs where you can change the parameters to see how it changes the graph.*
 
@@ -328,6 +328,8 @@ $$ u(1-x) = 1 + x $$
 
 $$ u - ux = 1 + x $$
 
+$$ u - 1 = ux + x $$
+
 $$ ux + x = u - 1 $$
 
 $$ x(u + 1) = u - 1 $$
@@ -387,23 +389,23 @@ to see how different mathematical functions, particularly in its
 [math](https://docs.python.org/3/library/math.html) and
 [cmath](https://docs.python.org/3/library/cmath.html) modules, worked and how their code was structured.
 I learned about different techniques of coding mathematical formulae that avoided weird edge cases that
-would either create an inaccurate result or throw an error despite a calculatable value existing.
+would either create an inaccurate result or throw an error despite a calculable value existing.
 However, when it came to the basic complicated math functions, like the logarithm, trigonometric, and
 exponential functions, I found that the Python source code didn't have them written up, because Python
 used the functions from the C library. This led me to a new adventure where I looked into [the original
 C code](https://github.com/freemint/fdlibm), which, while more difficult to read, is surprisingly
 readable once you have learned Python.
 The trig functions worked more or less how I expected, but I was surprised that the natural logarithm
-used a different series than the one I learned about in my calculus class. (So does the exponential
+used a different series than the one I had learned about in my calculus class. (So does the exponential
 function, incidentally. After all, the Taylor series for exp(x) only increases by one degree each term,
 and as we've learned here, if you can bump that up to two degrees per term, you have better optimization.
 If you are curious, go and seek that one out yourself.) Once I worked out how this series was derived,
 I gained an appreciation for the cleverness of mathematicians and programmers who sussed out this series
 to calculate values for this very useful function. I have always been interested in how things like this
 work; when I was younger, I was the curious student who got frustrated when something logical and
-grounded in structured patterns were given to us like a magic wand where one push of a button gave you
+grounded in structured patterns was given to us like a magic wand where one push of a button gave you
 the answer you sought. I saw logarithm tables that had painstaking calculations for every common logarithm
-between 1.0 and 10 in 0.001 increments. Where did these values come from, and how do we know they work
-for our calculations of radioactive decay, chemical reactions, and population growth? Thanks to this
-exercise, now I know, and if you made it this far, so do you! Thank you for joining me in this fun little
+between 1.000 and 10.000 in 0.001 increments. Where did these values come from, and how do we know they
+work for our calculations of radioactive decay, chemical reactions, and population growth? Thanks to this
+exercise, now I know, and if you made it this far, so do you! Thank you for joining me on this fun little
 math adventure. I hope you found this exercise as interesting and enlightening as I have.
