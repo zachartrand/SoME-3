@@ -307,7 +307,7 @@ We can if we do it in a clever way. Let's look at the series again:
 $$ \ln{(1+x)} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots $$
 
 This is the series for $\ln{(1+x)}$, but what if we could get a series for a slightly different input? For instance,
-what would the series be for $\ln{(1-x)}$? We can rewrite $\ln{(1-x)}$ as $\ln{(1 + (-x)}$. To get its series, let's plug (-x)
+what would the series be for $\ln{(1-x)}$? We can rewrite $\ln{(1-x)}$ as $\ln{(1 + (-x))}$. To get its series, let's plug (-x)
 into our natural log series:
 
 $$ \ln{(1-x)} = \ln{(1 + (-x))} = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{3} - \frac{(-x)^4}{4} - \ldots $$
