@@ -18,6 +18,8 @@ Created on 2 July 2023
  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 
+*This is the original entry. See the updated version [here](https://zachartrand.github.io/SoME-3-Living).*
+
 # How does a computer/calculator compute logarithms?
 
 ## The curious student's frustration
@@ -444,3 +446,7 @@ between 1.000 and 10.000 in 0.001 increments. Where did these values come from, 
 work for our calculations of radioactive decay, chemical reactions, and population growth? Thanks to this
 exercise, now I know, and if you made it this far, so do you! Thank you for joining me on this fun little
 math adventure. I hope you found this exercise as interesting and enlightening as I have.
+
+### Support
+Did you enjoy this article?  Want to help me make more?  Consider making a 
+[donation](https://www.buymeacoffee.com/zachartrand).
